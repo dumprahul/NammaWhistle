@@ -5,7 +5,7 @@ import {
   AnonAadhaarProof,
   useProver,
 } from '@anon-aadhaar/react';
-import bg from '../assets/bg.jpg';
+import bg from '../assets/anonbg.jpg';
 
 export default function Anon() {
   const [anonAadhaar] = useAnonAadhaar();
@@ -32,16 +32,12 @@ export default function Anon() {
         color: 'white',
       }}
     >
-      <div style={{ marginTop: '12%' }}>
-        <h1 className="text-6xl font-light text-black mb-2">
-          Indian Identity Verification
-        </h1>
-        <p className="text-xl text-black font-light mb-4">
-          Submit your aadhar proofs to generate validate zk-proofs
-        </p>
+      <div style={{ marginTop: '15%' }}>
+       
+        
         <LogInWithAnonAadhaar
           nullifierSeed={1234}
-          fieldsToReveal={['revealAgeAbove18', 'revealPinCode']}
+          fieldsToReveal={['revealAgeAbove18', 'revealGender','revealState']}
           _useTestAadhaar={true}
         />
       </div>
@@ -62,6 +58,7 @@ export default function Anon() {
               >
                 Show Proofs
               </button>
+
             )}
           </>
         )}
